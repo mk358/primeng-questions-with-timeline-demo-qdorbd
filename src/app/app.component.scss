@@ -82,5 +82,19 @@
     }
   }
 }
-.answered{color: '#51b759'}
-.not-answered{color: '#607D8B'}
+.answered {
+  color: "#51b759";
+}
+.not-answered {
+  color: "#607D8B";
+}
+.p-listbox-item .product-item {
+  border: 1px solid lightgrey !important;
+  margin: 2px 0 !important;
+}
+.marker-active {
+  background-color: blue !important;
+}
+.pi {
+  font-size: 14px !important;
+}

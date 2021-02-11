@@ -13,6 +13,9 @@ import {InputTextModule} from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
 import {TimelineModule} from 'primeng/timeline';
 import { CardModule } from "primeng/card";
+import {PaginatorModule} from 'primeng/paginator';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+import {ListboxModule} from 'primeng/listbox';
 
 @NgModule({
   imports: [
@@ -24,6 +27,9 @@ import { CardModule } from "primeng/card";
     DropdownModule,
     TimelineModule,
     CardModule,
+    ListboxModule,
+    ScrollPanelModule,
+    PaginatorModule,
     HttpClientModule,
     FormsModule
   ],

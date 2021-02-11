@@ -4,6 +4,7 @@ import { Product } from "./product";
 import { LazyLoadEvent, SelectItem } from "primeng/api";
 import { PrimeNGConfig } from "primeng/api";
 import { PrimeIcons } from "primeng/api";
+import { ViewportScroller } from "@angular/common";
 
 @Component({
   selector: "app-root",
@@ -13,10 +14,13 @@ import { PrimeIcons } from "primeng/api";
 export class AppComponent {
   products: Product[];
   events1: any = [];
+  first: any = 2;
+  selectedProduct: any;
 
   constructor(
     private productService: ProductService,
-    private primeNGConfig: PrimeNGConfig
+    private primeNGConfig: PrimeNGConfig,
+    private vs: ViewportScroller
   ) {}
 
   ngOnInit() {
@@ -37,6 +41,8 @@ export class AppComponent {
       let que = i < 4 ? question_answered : question_notanswered;
       this.events1.push({ ...que });
     });
+    this.selectedProduct = this.products[this.first];
+    this.setActive(this.events1[this.first]);
     this.primeNGConfig.ripple = true;
   }
   setActive(item) {
@@ -44,5 +50,15 @@ export class AppComponent {
       value.isActive = false;
     });
     item.isActive = true;
+  }
+  onPageChange(e, index?) {
+    this.first = index != null ? index : e.page;
+    this.selectedProduct = this.products[this.first];
+    document.querySelector("#item-" + this.first).scrollIntoView();
+    this.setActive(this.events1[this.first]);
+  }
+  selectProduct(e) {
+    let index = this.products.findIndex((item: any) => item.id === e.id);
+    this.onPageChange(null, index);
   }
 }

@@ -1,6 +1,7 @@
 body {
   padding: 2em;
-  font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif, “Apple Color Emoji”, “Segoe UI Emoji”, “Segoe UI Symbol”;
+  font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica,
+    Arial, sans-serif, “Apple Color Emoji”, “Segoe UI Emoji”, “Segoe UI Symbol”;
 }
 .custom-marker {
   display: flex;
@@ -30,8 +31,8 @@ body {
   height: 1.5rem;
   cursor: pointer;
 }
-.p-virtualscroller-item {
-  border: 1px solid lightgrey;
+.p-listbox-item .product-item {
+  border: 1px solid lightgrey !important;
   margin: 2px 0 !important;
 }
 .marker-active {
