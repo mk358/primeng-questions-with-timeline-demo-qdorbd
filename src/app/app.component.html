@@ -1,0 +1,34 @@
+<div class="p-grid">
+	<div class="p-col-1">
+		<p-timeline [value]="events1" styleClass="customized-timeline">
+			<ng-template pTemplate="marker" let-event>
+				<span class="custom-marker p-shadow-2" [style.backgroundColor]="event.color" [ngClass]="{'marker-active':event.isActive}" (click)="setActive(event)">
+                <i [ngClass]="event.icon"></i>
+            </span>
+			</ng-template>
+		</p-timeline>
+	</div>
+	<div class="p-col-11">
+		<p-virtualScroller [value]="products" scrollHeight="500px" [itemSize]="100">
+			<ng-template pTemplate="header">
+				<div class="p-d-flex p-ai-center p-jc-between">
+					List of Questions
+				</div>
+			</ng-template>
+			<ng-template let-product pTemplate="item" let-i="index">
+				<div class="product-item">
+					<div class="product-list-detail">
+						<h5 class="p-mb-2">
+              {{product.name}}</h5>
+						<i class="pi pi-tag product-category-icon"></i>
+						<span class="product-category">{{product.category}}</span>
+					</div>
+					<div class="product-list-action">
+						<h6 class="p-mb-2">${{product.price}}</h6>
+						<span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
+					</div>
+				</div>
+			</ng-template>
+		</p-virtualScroller>
+	</div>
+</div>

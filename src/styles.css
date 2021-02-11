@@ -1,0 +1,42 @@
+body {
+  padding: 2em;
+  font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif, “Apple Color Emoji”, “Segoe UI Emoji”, “Segoe UI Symbol”;
+}
+.custom-marker {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.customized-timeline {
+  position: absolute !important;
+  left: 0px !important;
+  margin-top: 50px;
+  height: 500px;
+}
+.p-timeline-event {
+  display: flex !important;
+  min-height: 50px !important;
+  position: relative !important;
+}
+.custom-marker {
+  display: flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+.p-virtualscroller-item {
+  border: 1px solid lightgrey;
+  margin: 2px 0 !important;
+}
+.marker-active {
+  background-color: blue !important;
+}
+.pi {
+  font-size: 14px !important;
+}
